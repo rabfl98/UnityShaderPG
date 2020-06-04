@@ -8,10 +8,8 @@ Shader "Custom/FakeLambert_Rim"
 		_LightWorldDirection("Light World Direction", Vector) = (0.3, 1, 0.3, 1)
 		_LightColor("Light Color", Color) = (1,1,1,1)
 		_LightIntensity("Light Intensity", Range(0, 10)) = 1
-		//_LightCutoff("Light Cutoff", Range(0, 1)) = 0.5
 		_RimColor("Rim Color", Color) = (1,1,1,1)
 		_RimIntensity("Rim Intensity", Range(0, 5)) = 1
-		//_RimCutoff("Rim Cutoff", Range(0, 1)) = 0.5
 	}
 	SubShader
 	{
@@ -31,12 +29,10 @@ Shader "Custom/FakeLambert_Rim"
 
 			fixed4 _RimColor;
 			float _RimIntensity;
-			//float _RimCutoff;
 
 			float3 _LightWorldDirection;
 			fixed4 _LightColor;
 			float _LightIntensity;
-			//float _LightCutoff;
 
 			struct v2f
 			{
