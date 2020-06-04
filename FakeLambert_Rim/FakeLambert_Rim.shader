@@ -5,7 +5,7 @@ Shader "Custom/FakeLambert_Rim"
 		_Color("Color", Color) = (1,1,1,1)
 		_MainTex("Albedo (RGB)", 2D) = "white" {}
 		_AmbientColor("Ambient Color", Color) = (1,1,1,1)
-		_LightWorldDirection("Light World Direction", Vector) = (0.3, 1, 0.3, 1)
+		_LightWorldDirection("Light World Direction", Vector) = (0.3, -1, 0.3, 1)
 		_LightColor("Light Color", Color) = (1,1,1,1)
 		_LightIntensity("Light Intensity", Range(0, 10)) = 1
 		_RimColor("Rim Color", Color) = (1,1,1,1)
@@ -60,7 +60,7 @@ Shader "Custom/FakeLambert_Rim"
 
 				float3 normal = normalize(i.normal);
 				float3 viewDir = normalize(i.viewDir);
-				float3 lightDir = mul(unity_WorldToObject, normalize(_LightWorldDirection));
+				float3 lightDir = mul(unity_WorldToObject, normalize(-_LightWorldDirection));
 
 				// Fake light
 				float ldn = dot(lightDir, normal);
